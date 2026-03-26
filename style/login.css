@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-Login {
+  width: 100%;
+  height: 100vh;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.login {
+  padding: 0;
+  margin: 0;
+  width: 450px;
+  height: 500px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.head-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  height: 80px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 36px;
+}
+.icon-title-login {
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+}
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.container-form input {
+  border: none;
+  text-align: start;
+  width: 80%;
+}
+.container-form input:focus {
+  outline: none;
+}
+.container-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0 0 0;
+  margin: 0;
+}
+.input-group {
+  border-bottom: 1px solid #000000;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 0 0;
+}
+
+.container-form svg {
+  width: 20%;
+  text-align: end;
+}
+.forget-password {
+  text-align: end;
+  width: 80%;
+  font-size: 18px;
+  margin-top: 5px;
+}
+.btn-login {
+  margin-top: 60px;
+  height: 55px;
+  background-color: #ffb800;
+  color: white;
+  text-align: center;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 26px;
+  box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.2);
+}
+.btn-login:hover {
+  background-color: #ffc940;
+  cursor: pointer;
+  color: #000000;
+}
+
+@media (max-width: 380px) {
+  .login {
+    width: 95%;
+    margin: auto;
+    height: 500px;
+  }
+  .head-login {
+    height: 80px;
+    font-size: 26px;
+  }
+  .icon-title-login {
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+  }
+  
+.input-group {
+  width: 85%;
+  font-size: 12px;
+}
+
+.forget-password {
+  font-size: 14px;
+}
+.btn-login {
+  margin-top: 50px;
+  height: 45px;
+  font-size: 20px;
+}
+
+}
+
+@media (min-width: 381px) and (max-width: 500px){
+.login {
+    width: 90%;
+    margin: auto;
+    height: 500px;
+  }
+  .head-login {
+    height: 80px;
+    font-size: 26px;
+  }
+  .icon-title-login {
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+  }
+  
+.input-group {
+  width: 85%;
+  font-size: 12px;
+}
+
+.forget-password {
+  font-size: 14px;
+}
+.btn-login {
+  margin-top: 50px;
+  height: 45px;
+  font-size: 20px;
+}
+}
