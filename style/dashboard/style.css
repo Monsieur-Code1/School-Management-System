@@ -4,13 +4,21 @@
     padding: 0;
 }
 
-.dashboard-navbar {
-    width: 90%;
+:root {
+    --background-color :#F4F4F4;
+}
+
+.main-layout {
+    width: 75%;
     margin: auto;
+}
+
+.dashboard-navbar {
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .search-box {
@@ -38,7 +46,7 @@
 }
 
 .notification-icon {
-    background-color:#F4F4F4 ;
+    background-color: var(--background-color) ;
     border-radius: 25%;
     width: 37px;
     height: 37px;
@@ -59,7 +67,7 @@
 }
 
 .user-name {
-    background-color: #F4F4F4;
+    background-color: var(--background-color);
     width: 190px;
     height: 40px;
     display: flex;
@@ -71,4 +79,88 @@
     letter-spacing: 1px;
     padding-right: 10px;
     border-bottom-left-radius: 25px;
+}
+
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.page-home {
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    width: 100%;
+    height: 40px;
+}
+
+.page-title {
+    font-family: lato;
+    font-weight: 700;
+    font-size: 18px;
+    width: 49px;
+    height: 22px;
+}
+
+.breadcrumb-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    font-family: lato;
+    font-size: 18px;
+    width: 89;
+    height: 22px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-content {
+    width: 327px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 30px;
+    font-size: 32px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+.students-cart {
+    background-color: #200C1F;
+    color: white;
+}
+
+.teachers-cart {
+    background-color: #93FF61;
+}
+
+.semester-cart {
+    background-color: #73FFD5;
+}
+
+.stat-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33px;
+}
+
+.students-footer {
+    background-color: #756974;
+}
+
+.teachers-footer {
+    background-color: #BAFB9C;
+}
+
+.semester-footer {
+    background-color: #A7FBE2;
 }
