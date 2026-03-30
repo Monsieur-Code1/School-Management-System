@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-color :#F4F4F4;
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-content {
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 30px;
+    font-size: 32px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+.students-cart {
+    background-color: #200C1F;
+    color: white;
+}
+
+.teachers-cart {
+    background-color: #93FF61;
+}
+
+.semester-cart {
+    background-color: #73FFD5;
+}
+
+.stat-footer {
+    display: flex;
+    align-items: center;
+    height: 33px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.students-footer {
+    background-color: #756974;
+}
+
+.teachers-footer {
+    background-color: #BAFB9C;
+}
+
+.semester-footer {
+    background-color: #A7FBE2;
+}

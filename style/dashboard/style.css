@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,16 +6,60 @@
 }
 
 :root {
-    --background-color :#F4F4F4;
+    --background-color :var(--background-color);
 }
 
 .main-layout {
-    width: 75%;
+    width: 100%;
     margin: auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 70px;
+}
+
+.container {
+    background-color: brown;
+}
+
+.admin-logo {
+    height: 222px;
+}
+
+.logo {
+    background-color : #FFB800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 61px;
+}
+
+.logo img {
+    width: 35px;
+    height: 35px;
+}
+
+.img-logo {
+    height: 161px;
+    background-color: #E2DDB0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.img-logo h3 {
+    font-family: Poppins;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .dashboard-navbar {
-    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,11 +73,12 @@
 }
 
 .search-input {
-    width: 204px;
     height: 34px;
     border-radius: 10px;
     padding-left: 35px;
+    background-color: #F4F4F4;
 }
+
 
 .search-box img {
     position: absolute;
@@ -46,18 +92,19 @@
 }
 
 .notification-icon {
-    background-color: var(--background-color) ;
     border-radius: 25%;
     width: 37px;
     height: 37px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F4F4F4;
 }
 .user-profile {
     display: flex;
     position: relative;
     align-items: center;
+    background-color: #F4F4F4;
 }
 .user-img {
     position: absolute;
@@ -68,7 +115,7 @@
 
 .user-name {
     background-color: var(--background-color);
-    width: 190px;
+    min-width: 190px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -109,58 +156,52 @@
     display: flex;
     align-items: center;
     padding-left: 5px;
+}
+
+.breadcrumb-wrapper span {
     font-family: lato;
     font-size: 18px;
-    width: 89;
     height: 22px;
 }
 
-.stats-container {
-    display: flex;
-    gap: 20px;
-}
-
-.stat-content {
-    width: 327px;
-    height: 175px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding-left: 30px;
-    font-size: 32px;
+.logo h2 {
     font-family: Poppins;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.img-logo h3 {
+    font-family: Poppins;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar {
+    background-color: #F7F7F7;
+}
+
+ul li a {
+    font-family: lato;
+    font-size: 25px;
     font-weight: 600;
+    color: #000000;
+    display: block;
+    padding: 20px 30px;
 }
 
-.students-cart {
-    background-color: #200C1F;
-    color: white;
-}
-
-.teachers-cart {
-    background-color: #93FF61;
-}
-
-.semester-cart {
-    background-color: #73FFD5;
-}
-
-.stat-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 33px;
-}
-
-.students-footer {
-    background-color: #756974;
-}
-
-.teachers-footer {
-    background-color: #BAFB9C;
-}
-
-.semester-footer {
-    background-color: #A7FBE2;
+.active {
+    background-color: #FFB800;
 }
