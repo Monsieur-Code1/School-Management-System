@@ -8,10 +8,21 @@
     --background-color :#F4F4F4;
 }
 
+.dashboard-container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
 .stats-container {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+}
+
+.chart-container img {
+    height: 425px;
+    width: 100%;
 }
 
 .stat-content {
