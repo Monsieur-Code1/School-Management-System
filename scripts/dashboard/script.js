@@ -12,15 +12,17 @@ const sidebarItems = [
   { path: "#/changePassword", name: "Change password" },
 ];
 
-sidebarLink.innerHTML = sidebarItems
-  .map((item) => {
-return `
-    <li>
-        <a class="nav-link" href="${item.path}">${item.name}</a>
-    </li>
-    `;
-  })
-  .join("");
+if (sidebarLink) {
+  sidebarLink.innerHTML = sidebarItems
+    .map((item) => {
+      return `
+      <li>
+          <a class="nav-link" href="${item.path}">${item.name}</a>
+      </li>
+      `;
+    })
+    .join("");
+}
 
 const router = {
   "/": {
@@ -60,7 +62,9 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     let dynamicStyle = document.getElementById("dynamic-style");
     const res = await fetch(route.html);
     const html = await res.text();
-    document.querySelector(".main-pages").innerHTML = html;
+const container = document.querySelector(".main-pages");
+container.innerHTML = html;
+await new Promise((resolve) => setTimeout(resolve, 0));
 
     if (route.js) {
       const module = await import(`${route.js}?=${Date.now()}`);
