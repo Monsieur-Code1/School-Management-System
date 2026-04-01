@@ -1,7 +1,7 @@
 const sidebarLink = document.querySelector(".sidebar-link");
 
 const sidebarItems = [
-  { path: "/", name: "Dashboard" },
+  { path: "#/", name: "Dashboard" },
   { path: "#/student", name: "Student" },
   { path: "#/staff", name: "Staff" },
   { path: "#/academics", name: "Academics" },
