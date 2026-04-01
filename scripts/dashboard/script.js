@@ -14,9 +14,10 @@ const sidebarItems = [
 
 sidebarLink.innerHTML = sidebarItems
   .map((item) => {
+    const fullPath = item.path === "/" ? repoName : `${repoName}${item.path}`;
     return `
     <li>
-        <a class="nav-link" href="${item.path}" onclick="route(event)">${item.name}</a>
+        <a class="nav-link" href="${fullPath}" onclick="route(event)">${item.name}</a>
     </li>
     `;
   })
@@ -47,6 +48,11 @@ const route = (event) => {
 
 const handleLocation = async () => {
   const path = window.location.pathname;
+  // الاضافه الجديده عشان لو نجحت 
+  if (path.startsWith(repoName)) {
+    path = path.replace(repoName, "") || "/";
+  }
+  // نهايه الاضاف
   const route = router[path] || router["/"];
   const pageTitle =
     sidebarItems.find((item) => item.path === path)?.name || "Dashboard";
