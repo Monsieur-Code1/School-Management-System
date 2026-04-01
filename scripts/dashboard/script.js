@@ -2,14 +2,14 @@ const sidebarLink = document.querySelector(".sidebar-link");
 
 const sidebarItems = [
   { path: "/", name: "Dashboard" },
-  { path: "/student", name: "Student" },
-  { path: "/staff", name: "Staff" },
-  { path: "/academics", name: "Academics" },
-  { path: "/performance", name: "Performance" },
-  { path: "/collectFees", name: "Collect Fees" },
-  { path: "/announcement", name: "Announcement" },
-  { path: "/setup", name: "Setup" },
-  { path: "/changePassword", name: "Change password" },
+  { path: "#/student", name: "Student" },
+  { path: "#/staff", name: "Staff" },
+  { path: "#/academics", name: "Academics" },
+  { path: "#/performance", name: "Performance" },
+  { path: "#/collectFees", name: "Collect Fees" },
+  { path: "#/announcement", name: "Announcement" },
+  { path: "#/setup", name: "Setup" },
+  { path: "#/changePassword", name: "Change password" },
 ];
 
 sidebarLink.innerHTML = sidebarItems
@@ -45,7 +45,7 @@ const route = (event) => {
 };
 
 const handleLocation = async () => {
-  const path = window.location.pathname;
+const path = window.location.hash.replace("#", "") || "/";
   const route = router[path] || router["/"];
   const pageTitle = sidebarItems.find((item) => item.path === path)?.name || "Dashboard";
   const displaySpan = document.getElementById("page-title-display");
