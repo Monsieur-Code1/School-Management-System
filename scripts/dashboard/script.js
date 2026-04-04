@@ -1,4 +1,4 @@
-const sidebarLink = document.querySelector(".sidebar-link");
+const sidebarLink = document.querySelector('.sidebar-link');
 
 const sidebarItems = [
   { path: '#/', name: 'Dashboard', pathIcon: '../../img/sidebaricon/dashbord.svg' },
@@ -20,7 +20,6 @@ const sidebarItems = [
   { path: '#/changePassword', name: 'Change password', pathIcon: '../../img/sidebaricon/change-password-2.svg' },
 ];
 
-
 if (sidebarLink) {
   sidebarLink.innerHTML = sidebarItems
     .map((item) => {
@@ -28,64 +27,61 @@ if (sidebarLink) {
       <li>
           <a class="nav-link" href="${item.path}">
           <img class="iconSidebar" src=${item.pathIcon} alt=${item.name}/>
-        <span>${item.name}</span>
+        <span class="text-navigate">${item.name}</span>
           </a>
       </li>
       `;
     })
-    .join("");
+    .join('');
 }
 
 const router = {
-  "/": {
+  '/': {
     html: `../../pages/dashboard/dashboard.html`,
     js: `../../scripts/dashboard/dashboard.js`,
     css: `../../style/dashboard/dashboard.css`,
   },
-  "/student": { html: `../../pages/dashboard/student.html` },
-  "/staff": { html: `../../pages/dashboard/staff.html` },
-  "/academics": { html: `../../pages/dashboard/academics.html` },
-  "/performance": { html: `../../pages/dashboard/performance.html` },
-  "/collectFees": { html: `../../pages/dashboard/collectFees.html` },
-  "/announcement": { html: `../../pages/dashboard/announcement.html` },
-  "/setup": { html: `../../pages/dashboard/setup.html` },
-  "/changePassword": { html: `../../pages/dashboard/changePassword.html` },
+  '/student': { html: `../../pages/dashboard/student.html` },
+  '/staff': { html: `../../pages/dashboard/staff.html` },
+  '/academics': { html: `../../pages/dashboard/academics.html` },
+  '/performance': { html: `../../pages/dashboard/performance.html` },
+  '/collectFees': { html: `../../pages/dashboard/collectFees.html` },
+  '/announcement': { html: `../../pages/dashboard/announcement.html` },
+  '/setup': { html: `../../pages/dashboard/setup.html` },
+  '/changePassword': { html: `../../pages/dashboard/changePassword.html` },
 };
 
-
 const handleLocation = async () => {
-const path = window.location.hash.replace("#", "") || "/";
-  const route = router[path] || router["/"];
- const pageTitle =
-  sidebarItems.find((item) => item.path.replace("#", "") === path)?.name ||
-  "Dashboard";
-  const displaySpan = document.getElementById("page-title-display");
+  const path = window.location.hash.replace('#', '') || '/';
+  const route = router[path] || router['/'];
+  const pageTitle = sidebarItems.find((item) => item.path.replace('#', '') === path)?.name || 'Dashboard';
+  const displaySpan = document.getElementById('page-title-display');
 
   if (displaySpan) {
-    displaySpan.innerText = pageTitle ? pageTitle : "Dashboard";
+    displaySpan.innerText = pageTitle ? pageTitle : 'Dashboard';
   }
 
-document.querySelectorAll(".nav-link").forEach((link) => {
-  const linkPath = link.getAttribute("href").replace("#", "");
-  link.classList.toggle("active", linkPath === path);
-});
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const linkPath = link.getAttribute('href').replace('#', '');
+    link.classList.toggle('active', linkPath === path);
+  });
 
   try {
-    let dynamicStyle = document.getElementById("dynamic-style");
+    let dynamicStyle = document.getElementById('dynamic-style');
     const res = await fetch(route.html);
     const html = await res.text();
-const container = document.querySelector(".main-pages");
-container.innerHTML = html;
-await new Promise((resolve) => setTimeout(resolve, 0));
+    const container = document.querySelector('.main-pages');
+    container.innerHTML = html;
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     if (route.js) {
       const module = await import(`${route.js}?=${Date.now()}`);
       if (module.init) module.init();
     }
     if (!dynamicStyle) {
-      dynamicStyle = document.createElement("link");
-      dynamicStyle.id = "dynamic-style";
-      dynamicStyle.rel = "stylesheet";
+      dynamicStyle = document.createElement('link');
+      dynamicStyle.id = 'dynamic-style';
+      dynamicStyle.rel = 'stylesheet';
       document.head.appendChild(dynamicStyle);
     }
 
@@ -93,9 +89,9 @@ await new Promise((resolve) => setTimeout(resolve, 0));
       dynamicStyle.href = route.css;
     }
   } catch {
-    console.log("error");
+    console.log('error');
   }
 };
 
-window.addEventListener("hashchange", handleLocation);
+window.addEventListener('hashchange', handleLocation);
 handleLocation();

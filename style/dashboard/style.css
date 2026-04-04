@@ -17,15 +17,27 @@
 }
 .sidebar {
   height: 100vh;
-  overflow-y: hidden;
   position: sticky;
   display: flex;
   flex-direction: column;
   width: 310px;
   left: 0;
   top: 0;
-  overflow-y: auto;
+  /* overflow-y: auto; خليك على واحدة بس */
+  transition: width 0.3s ease;
 }
+/* close */
+.sidebar.sidebar-semi-close {
+  width: 80px;
+  text-align: center;
+  /* background-color: #eee; */
+
+}
+.sidebar.sidebar-close{
+  width: 0;
+  overflow: hidden;
+}
+/*  */
 
 .container-content-page {
   flex: 1;
@@ -34,6 +46,9 @@
 .admin-logo {
   height: 222px;
 }
+.admin-logo.admin-logo-close{
+  height: 180px;
+}
 
 .logo {
   background-color: #ffb800;
@@ -41,6 +56,9 @@
   align-items: center;
   justify-content: center;
   height: 61px;
+}
+.logo.close-logo {
+  display: none;
 }
 
 .logo img {
@@ -58,11 +76,32 @@
   gap: 5px;
 }
 
-.img-logo h3 {
+.img-logo.img-logo-close {
+  justify-content: start;
+  align-items: flex-start;
+}
+.img-admin {
+  width: 170px;
+  height: 100px;
+}
+.img-admin.img-admin-close {
+  width: 60px;
+  height: 120px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.admin-text {
+  display: block;
   font-family: Poppins;
   letter-spacing: 2px;
   font-size: 25px;
   font-weight: 700;
+}
+.admin-text.admin-text-close {
+  display: none;
 }
 
 .dashboard-navbar {
@@ -194,6 +233,7 @@ a {
   text-decoration: none;
 }
 
+
 .sidebar {
   background-color: #f7f7f7;
 }
@@ -206,6 +246,7 @@ a {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  text-align: center;
   width: 100% !important;
 }
 
@@ -237,5 +278,34 @@ ul li a {
   width: 40px;
   height: 100%;
   padding-right: 10px;
+  object-fit: contain;
   /* color: #ffb800; */
+}
+.iconSidebar.iconSidebar-close{
+  width: 50px;
+  height: 100%;
+  padding-right: 2px;
+}
+
+.container-logo {
+  display: flex;
+  background-color: #ffb800;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon-show-sidebar {
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+}
+.icon-show-sidebar.icon-show-sidebar-close {
+  position: fixed;
+  padding: 5px;
+  top: 2px;
+  left: 2px;
+  width: 60px;
+  height: 50px;
+   object-fit: contain;
+  z-index: 999;
+  border: #ffb800;
 }
