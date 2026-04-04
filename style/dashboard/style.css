@@ -25,15 +25,15 @@
   top: 0;
   /* overflow-y: auto; خليك على واحدة بس */
   transition: width 0.3s ease;
+  /* border-right: 5px solid #ffb800 ; */
 }
 /* close */
 .sidebar.sidebar-semi-close {
   width: 80px;
   text-align: center;
   /* background-color: #eee; */
-
 }
-.sidebar.sidebar-close{
+.sidebar.sidebar-close {
   width: 0;
   overflow: hidden;
 }
@@ -46,8 +46,9 @@
 .admin-logo {
   height: 222px;
 }
-.admin-logo.admin-logo-close{
-  height: 180px;
+.admin-logo.admin-logo-close {
+  height: 90px;
+  /* background-color: #f4f4f4; */
 }
 
 .logo {
@@ -73,25 +74,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  text-align: center;
+  /* gap: 5px; */
+  background-color: #e2ddb0;
 }
 
 .img-logo.img-logo-close {
-  justify-content: start;
   align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  background-color: #f7f7f7;
+  margin: auto;
 }
 .img-admin {
   width: 170px;
   height: 100px;
 }
 .img-admin.img-admin-close {
-  width: 60px;
-  height: 120px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  width: 100%;
+  padding-top: 10px;
+  height: 80px !important;
+
+  /* margin: auto; */
+  padding-top: 5px;
+  background-color: #dcdccf;
 }
 .admin-text {
   display: block;
@@ -233,7 +239,6 @@ a {
   text-decoration: none;
 }
 
-
 .sidebar {
   background-color: #f7f7f7;
 }
@@ -267,6 +272,11 @@ ul li a {
 
 .active {
   background-color: #ffb800;
+  border-radius: 20px 0 0 20px;
+  -webkit-border-radius: 20px 0 0 20px;
+  -moz-border-radius: 20px 0 0 20px;
+  -ms-border-radius: 20px 0 0 20px;
+  -o-border-radius: 20px 0 0 20px;
 }
 
 .nav-link {
@@ -281,7 +291,7 @@ ul li a {
   object-fit: contain;
   /* color: #ffb800; */
 }
-.iconSidebar.iconSidebar-close{
+.iconSidebar.iconSidebar-close {
   width: 40px;
   height: 40px;
   padding-right: 2px;
@@ -305,7 +315,7 @@ ul li a {
   left: 2px;
   width: 60px;
   height: 50px;
-   object-fit: contain;
+  object-fit: contain;
   z-index: 999;
   border: #ffb800;
 }
