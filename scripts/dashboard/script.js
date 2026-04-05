@@ -46,7 +46,10 @@ const router = {
   '/academics': { html: `../../pages/dashboard/academics.html` },
   '/performance': { html: `../../pages/dashboard/performance.html` },
   '/collectFees': { html: `../../pages/dashboard/collectFees.html` },
-  '/announcement': { html: `../../pages/dashboard/announcement.html` },
+  '/announcement': { 
+    html: `../../pages/dashboard/announcement.html`,
+    css: `../../style/dashboard/announcement.css`
+   },
   '/setup': { html: `../../pages/dashboard/setup.html` },
   '/changePassword': { html: `../../pages/dashboard/changePassword.html` },
 };
