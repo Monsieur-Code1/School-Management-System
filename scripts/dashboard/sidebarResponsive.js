@@ -15,6 +15,7 @@ const img_admin = document.querySelector('.img-admin');
 const admin_text = document.querySelector('.admin-text');
 const admin_logo = document.querySelector('.admin-logo');
 const iconSidebar = document.querySelector('.iconSidebar');
+const contentPageMarginLift = document.getElementById('contentPageMarginLift');
 
 const sidebar = document.querySelector('.sidebar');
 
@@ -63,6 +64,7 @@ function renderSidebar() {
   if (state === 'open') {
     textNavigate.forEach((el) => {
       el.style.display = 'block';
+      contentPageMarginLift.style.marginLeft = '310px';
     });
 
     icon_show.src = srcImgClose;
@@ -75,7 +77,7 @@ function renderSidebar() {
   // ==============================
   if (state === 'semi') {
     sidebar.classList.add('sidebar-semi-close');
-
+    contentPageMarginLift.style.marginLeft = '80px';
     textNavigate.forEach((el) => {
       el.style.display = 'none';
     });
@@ -90,7 +92,7 @@ function renderSidebar() {
   // ==============================
   if (state === 'close') {
     sidebar.classList.add('sidebar-close');
-
+contentPageMarginLift.style.marginLeft = '0';
     textNavigate.forEach((el) => {
       el.style.display = 'none';
     });
@@ -113,7 +115,6 @@ function hiddenImgAndLogo(isOpen) {
   admin_logo.classList.toggle('admin-logo-close', isOpen);
   iconSidebar.classList.toggle('iconSidebar-close', isOpen);
 }
-
 
 let userControlled = false;
 
@@ -138,7 +139,7 @@ function setSidebarByScreen() {
 
   renderSidebar();
 }
-setSidebarByScreen()
+setSidebarByScreen();
 
 /*
 // READ PATH ICONS SHOW AND HIDDEN IN SIDEBAR
