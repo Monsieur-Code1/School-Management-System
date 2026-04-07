@@ -118,16 +118,22 @@ function hiddenImgAndLogo(isOpen) {
 let userControlled = false;
 
 function setSidebarByScreen() {
-  if (userControlled) return; // ❌ ما يتدخلش
-
   const width = window.innerWidth;
 
+  // ✅ الموبايل: دايمًا مخفي
+  if (width <= 600) {
+    indexSidebar = 2; // close
+    renderSidebar();
+    return;
+  }
+
+  // ✅ باقي الشاشات: يحترم اختيار المستخدم
+  if (userControlled) return;
+
   if (width > 992) {
-    indexSidebar = 0;
-  } else if (width > 600) {
-    indexSidebar = 1;
+    indexSidebar = 0; // open
   } else {
-    indexSidebar = 2;
+    indexSidebar = 1; // semi
   }
 
   renderSidebar();

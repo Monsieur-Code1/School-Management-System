@@ -7,13 +7,17 @@
 :root {
   --background-color: #f4f4f4;
 }
-
+html, body {
+  height: 100%;
+}
 .main-layout {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  align-items: stretch; /* 👈 ده الحل */
   min-height: 100vh;
+   
 }
 .sidebar {
   height: 100vh;
@@ -23,6 +27,8 @@
   width: 310px;
   left: 0;
   top: 0;
+  z-index: 1000;
+   
   /* overflow-y: auto; خليك على واحدة بس */
   transition: width 0.3s ease;
   /* border-right: 5px solid #ffb800 ; */
@@ -36,6 +42,7 @@
 .sidebar.sidebar-close {
   width: 0;
   overflow: hidden;
+  /* display: none; */
 }
 /*  */
 
@@ -298,11 +305,13 @@ ul li a {
 }
 
 .container-logo {
-  display: flex;
+   display: flex;
   background-color: #ffb800;
   justify-content: space-around;
   align-items: center;
+ 
 }
+
 .icon-show-sidebar {
   width: 40px;
   height: 40px;
@@ -310,6 +319,7 @@ ul li a {
 }
 .icon-show-sidebar.icon-show-sidebar-close {
   position: fixed;
+  z-index: 999;
   padding: 5px;
   top: 2px;
   left: 2px;
