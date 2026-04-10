@@ -7,22 +7,20 @@
 :root {
   --background-color: #f4f4f4;
 }
-
 .main-layout {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  min-height: 100vh;
 }
 .sidebar {
+  /* عدلت position ل fixed عشان يظهر فوق container*/
+  position: fixed;
+  left: 0;
+    top: 0;
+    z-index: 999;
   height: 100vh;
-  position: sticky;
   display: flex;
   flex-direction: column;
   width: 310px;
-  left: 0;
-  top: 0;
+  background-color: #f7f7f7;
   /* overflow-y: auto; خليك على واحدة بس */
   transition: width 0.3s ease;
   /* border-right: 5px solid #ffb800 ; */
@@ -37,11 +35,13 @@
   width: 0;
   overflow: hidden;
 }
-/*  */
 
 .container-content-page {
   flex: 1;
-  padding: 50px;
+  padding: 10px 30px;
+  margin-top: 50px;
+  transition: margin-left 0.3s ease;
+  
 }
 .admin-logo {
   height: 222px;
@@ -111,22 +111,27 @@
 }
 
 .dashboard-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
 }
 
 .search-box {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  /*اعاده ترتيب ظهور search في وضع responsive*/
+  order: 2;
 }
 
 .search-input {
   height: 34px;
   border-radius: 10px;
   padding-left: 35px;
+  width: 150px;
   background-color: #f4f4f4;
+  width: 100%;
 }
 
 .search-box img {
@@ -136,8 +141,7 @@
 
 .nav-actions {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  justify-content: space-between;
 }
 
 .notification-icon {
@@ -149,41 +153,35 @@
   align-items: center;
   background-color: #f4f4f4;
 }
-.user-profile {
-  display: flex;
-  position: relative;
-  align-items: center;
-  background-color: #f4f4f4;
-}
-.user-img {
-  position: absolute;
-  left: -5px;
-  width: 50px;
-  height: 48px;
-}
 
 .user-name {
   background-color: var(--background-color);
-  min-width: 190px;
-  height: 40px;
   display: flex;
   align-items: center;
-  justify-content: end;
-  gap: 10px;
+  justify-content: center;
   font-family: lato;
   font-weight: 700;
   letter-spacing: 1px;
-  padding-right: 10px;
-  border-bottom-left-radius: 25px;
+  padding: 5px;
+  margin-right: 30px;
+  border-radius: 10px;
 }
 
 .dashboard-header {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   margin-top: 20px;
+  width: 100%;
 }
 
+.user-profile {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .page-home {
   background-color: var(--background-color);
   display: flex;
@@ -211,7 +209,7 @@
   font-family: lato;
   font-size: 18px;
   height: 22px;
-}
+} 
 
 .logo h2 {
   font-family: Poppins;
@@ -237,10 +235,6 @@ ul {
 
 a {
   text-decoration: none;
-}
-
-.sidebar {
-  background-color: #f7f7f7;
 }
 
 /* add new style  */
@@ -318,4 +312,14 @@ ul li a {
   object-fit: contain;
   z-index: 999;
   border: #ffb800;
+}
+
+.main-layout:has(.sidebar-close) {
+    grid-template-columns: 0 1fr;
+    gap: 0;
+}
+
+.main-layout:has(.sidebar-semi-close) {
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
 }

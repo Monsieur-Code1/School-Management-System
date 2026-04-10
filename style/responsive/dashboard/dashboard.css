@@ -1,0 +1,78 @@
+
+@media (min-width: 768px) {
+.container-content-page {
+  padding: 50px;
+  margin: 0px; 
+}
+
+.dashboard-navbar {
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+  width: 100%;
+}
+
+.search-box {
+  order: 1;
+}
+
+.search-input {
+  width: 204px;
+}
+
+.nav-actions {
+  align-items: center;
+  order: 2;  
+  width: 80%;
+}
+.user-name {
+  border-bottom-left-radius: 10px;
+  padding-left: 10px;
+}
+
+.user-profile {
+    position: relative;
+    flex-direction: row;
+}
+
+.user-img {
+    position: absolute;
+    left: -72px;
+    width: 50px;
+    height: 48px;
+    margin-right: 50px;
+}
+.stats-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+ 
+@media (min-width: 992px) {
+.nav-actions{
+  width: 50%;
+}
+.dashboard-container {
+  gap: 50px;
+}
+}
+
+@media (min-width: 1200px) {
+.nav-actions {
+  width: 40%;
+}
+.main-layout {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+}
+
+.sidebar{
+  position: sticky;
+  left: 0;
+} 
+.stats-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+.dashboard-container {
+  gap: 60px;
+}
+}

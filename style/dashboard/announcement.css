@@ -1,5 +1,6 @@
 .announcement-page {
     margin-top: 30px;
+    min-height: 100vh;
 }
 
 .announcement-page h2 {
@@ -48,17 +49,20 @@ border-top: 4px solid #FFB800;
 
 .announcement {
     background-color: #F4F4F4;
-    height: 780px;
+    min-height: calc(100vh - 100px);
+    padding-bottom: 50px;
 }
 
 .announcement-content {
     margin: 50px;
     padding: 22px;
     background-color: white;
+    height: auto;
+    min-height: 400px;
 }
 
 .announcement-content p {
-    width: 100%px;
+    width: 100%;
     font-size: 20px;
     font-family: lato;
     font-family: 600;

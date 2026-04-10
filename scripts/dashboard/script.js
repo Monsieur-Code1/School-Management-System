@@ -40,6 +40,7 @@ const router = {
     html: `../../pages/dashboard/dashboard.html`,
     js: `../../scripts/dashboard/dashboard.js`,
     css: `../../style/dashboard/dashboard.css`,
+    cssResponsive: `../../style/responsive/dashboard/dashboard.css`
   },
   '/student': { html: `../../pages/dashboard/student.html` },
   '/staff': { html: `../../pages/dashboard/staff.html` },
@@ -63,7 +64,6 @@ const handleLocation = async () => {
   if (displaySpan) {
     displaySpan.innerText = pageTitle ? pageTitle : 'Dashboard';
   }
-
   document.querySelectorAll('.nav-link').forEach((link) => {
     const linkPath = link.getAttribute('href').replace('#', '');
     link.classList.toggle('active', linkPath === path);
@@ -76,11 +76,6 @@ const handleLocation = async () => {
     const container = document.querySelector('.main-pages');
     container.innerHTML = html;
     await new Promise((resolve) => setTimeout(resolve, 0));
-
-    if (route.js) {
-      const module = await import(`${route.js}?=${Date.now()}`);
-      if (module.init) module.init();
-    }
     if (!dynamicStyle) {
       dynamicStyle = document.createElement('link');
       dynamicStyle.id = 'dynamic-style';
@@ -91,6 +86,21 @@ const handleLocation = async () => {
     if (route.css) {
       dynamicStyle.href = route.css;
     }
+
+    let responsiveStyle = document.getElementById('responsive-style');
+    if (!responsiveStyle) {
+      responsiveStyle = document.createElement('link');
+      responsiveStyle.id = 'responsive-style';
+      responsiveStyle.rel = 'stylesheet';
+      document.head.appendChild(responsiveStyle); 
+    }
+    responsiveStyle.href = route.cssResponsive ? route.cssResponsive : '';
+
+     if (route.js) {
+      const module = await import(`${route.js}?=${Date.now()}`);
+      if (module.init) module.init();
+    }
+
   } catch {
     console.log('error');
   }
